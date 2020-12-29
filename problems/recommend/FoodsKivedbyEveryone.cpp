@@ -9,21 +9,29 @@ int main()
 {
     int n, m;
     cin >> n >> m;
-    vector<int> k(n);
-    int a[100][100];
-    int search[100];
+    vector<int> cnt(m);
     rep(i, n)
     {
-        cin >> k[i];
-        int cnt = k[i];
-        rep(j, cnt)
+        int k;
+        cin >> k;
+        rep(j, k)
         {
-            cin >> a[i][j];
-            rep(l, cnt)
-            {
-            }
+            int A;
+            cin >> A;
+            A--;
+            cnt[A]++;
         }
     }
+    int ans = 0;
+    rep(i, m)
+    {
+        if (cnt[i] == n)
+        {
+            ans++;
+        }
+    }
+
+    cout << ans << endl;
 
     return 0;
 }
